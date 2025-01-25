@@ -5,13 +5,12 @@ namespace App\Livewire;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class SignIn extends Component
+class Login extends Component
 {
     #[Rule(['required', 'email', 'exists:users,email'])]
     public string $email;
@@ -37,9 +36,9 @@ class SignIn extends Component
     }
 
     #[Title('Sign In')]
-    #[Layout('components.layouts.sign-in')]
+    #[Layout('components.layouts.signing')]
     public function render(): View
     {
-        return view('livewire.sign-in');
+        return view('livewire.login');
     }
 }
