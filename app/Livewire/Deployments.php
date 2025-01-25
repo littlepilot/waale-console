@@ -10,7 +10,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
-class Dashboard extends Component
+class Deployments extends Component
 {
     #[Url('project')]
     public $projectId;
@@ -37,7 +37,7 @@ class Dashboard extends Component
                 ->get();
         }
 
-        return view('livewire.dashboard', [
+        return view('livewire.deployments', [
             'projects' => $projects,
             'selectedProject' => $selectedProject,
             'deployments' => $deployments,

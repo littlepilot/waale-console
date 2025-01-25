@@ -9,5 +9,6 @@ Route::get('/login', \App\Livewire\Login::class)
     ->middleware('guest');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', \App\Livewire\Dashboard::class)->name('home');
+    Route::redirect('/dashboard', '/deployments')->name('home');
+    Route::get('/deployments', \App\Livewire\Deployments::class)->name('deployments');
 });
