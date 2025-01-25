@@ -26,4 +26,9 @@ class Project extends Model
             ->wherePivot('role', 'member')
             ->withTimestamps();
     }
+
+    public function deployments()
+    {
+        return $this->hasMany(Deployment::class);
+    }
 }
