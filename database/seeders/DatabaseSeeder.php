@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('_response1024'),
         ]);
         $user1->projects()->create([
-            'name' => 'Ahmet\'s Project'
+            'name' => 'Waale Console',
+            'domain' => 'waale.dev',
+            'repository' => 'navruzahmet/waale-console',
         ], ['role' => 'owner']);
 
         $user2 = User::create([
@@ -28,7 +30,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456'),
         ]);
         $user2->projects()->create([
-            'name' => 'Oğuz\'s Project',
+            'name' => 'Waale App',
+            'domain' => 'waale.app',
+            'repository' => 'littlepilot/waale-app',
         ], ['role' => 'owner']);
     }
 }

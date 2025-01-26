@@ -11,6 +11,8 @@ class Project extends Model
 
     protected $fillable = [
         'name',
+        'domain',
+        'repository',
     ];
 
     public function owners()
@@ -30,5 +32,10 @@ class Project extends Model
     public function deployments()
     {
         return $this->hasMany(Deployment::class);
+    }
+
+    public function lastDeployment()
+    {
+        return $this->hasOne(Deployment::class)->latest();
     }
 }
