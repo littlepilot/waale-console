@@ -3,10 +3,12 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Projects extends Component
 {
+    #[Title('Projects | Waale')]
     public function render()
     {
         return view('livewire.projects', [

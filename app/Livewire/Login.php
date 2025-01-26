@@ -21,6 +21,7 @@ class Login extends Component
     #[Rule(['nullable'])]
     public bool $remember;
 
+    #[Title('Login | Waale')]
     public function login(): void
     {
         $validated = $this->validate();

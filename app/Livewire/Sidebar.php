@@ -18,6 +18,7 @@ class Sidebar extends Component
     {
         return view('livewire.sidebar', [
             'items' => [
+                ['label' => 'Dashboard', 'path' => route('dashboard'), 'icon' => 'dashboard'],
                 ['label' => 'Projects', 'path' => route('projects'), 'icon' => 'projects'],
                 ['label' => 'Deployments', 'path' => route('deployments'), 'icon' => 'deployments'],
                 ['label' => 'Domains', 'path' => '/domains', 'icon' => 'domains'],
