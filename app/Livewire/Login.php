@@ -30,7 +30,7 @@ class Login extends Component
             ->first();
 
         if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password']], $validated['remember'])) {
-            Auth::login($user, $validated['remember']); ;
+            Auth::login($user, $validated['remember']);
         }
 
         $this->redirectRoute('home');
