@@ -1,4 +1,4 @@
-<div>
+<div wire:poll.1s>
     <main class="lg:pr-96">
         <header class="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
             <h1 class="text-base/7 font-semibold text-white">Deployments</h1>
@@ -22,18 +22,18 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="absolute right-0 z-10 mt-2.5 w-40 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="sort-menu-button" tabindex="-1">
                     <!-- Active: "bg-gray-50 outline-none", Not Active: "" -->
-                    <a href="{{ route('home') }}" class="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="sort-menu-item-0">All projects</a>
+                    <a href="{{ route('deployments') }}" class="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="sort-menu-item-0">All projects</a>
                     @foreach($projects as $project)
-                        <a href="{{ route('home', ['project' => $project]) }}" class="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="sort-menu-item-0">{{ $project->name }}</a>
+                        <a href="{{ route('deployments', ['project' => $project]) }}" class="block px-3 py-1 text-sm/6 text-gray-900 hover:bg-gray-50" role="menuitem" tabindex="-1" id="sort-menu-item-0">{{ $project->name }}</a>
                     @endforeach
                 </div>
             </div>
         </header>
 
         <!-- Deployment list -->
-        <ul role="list" class="divide-y divide-white/5" wire:poll.1s>
+        <ul role="list" class="divide-y divide-white/5">
             @foreach($deployments as $deployment)
-                <livewire:deployment-summary wire:key="{{ $deployment->id }}" :deployment="$deployment" />
+                <livewire:deployment-summary wire:key="{{ $deployment->id }}" :deployment="$deployment"/>
             @endforeach
         </ul>
     </main>

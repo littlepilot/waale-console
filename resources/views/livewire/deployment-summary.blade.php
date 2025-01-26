@@ -1,4 +1,4 @@
-<li class="relative flex items-center space-x-4 px-4 py-4 sm:px-6 lg:px-8">
+<li class="relative flex items-center space-x-4 px-4 py-4 sm:px-6 lg:px-8" wire:poll.1s>
     <div class="min-w-0 flex-auto">
         <div class="flex items-center gap-x-3">
             @if($deployment->status == \App\Models\DeploymentStatus::Pending)
