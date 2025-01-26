@@ -11,4 +11,5 @@ Route::get('/login', \App\Livewire\Login::class)
 Route::middleware('auth')->group(function () {
     Route::redirect('/dashboard', '/deployments')->name('home');
     Route::get('/deployments', \App\Livewire\Deployments::class)->name('deployments');
+    Route::get('/projects', \App\Livewire\Projects::class)->name('projects');
 });
