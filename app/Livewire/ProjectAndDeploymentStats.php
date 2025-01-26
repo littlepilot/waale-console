@@ -14,7 +14,7 @@ class ProjectAndDeploymentStats extends Component
         $deploymentCount = Deployment::count();
         $successDeploymentCount = Deployment::where('status', 'deployed')->count();
         $averageDeploymentDuration = random_int(60, 70);
-        $successRate = $successDeploymentCount / $deploymentCount * 100;
+        $successRate = $deploymentCount === 0 ? 0 : $successDeploymentCount / $deploymentCount * 100;
 
         return view('livewire.project-and-deployment-stats', compact(
             'projectCount',
