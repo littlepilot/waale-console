@@ -41,7 +41,7 @@
 
                 @if(filled($project?->lastDeployment?->status))
                     <p class="text-xs/5 text-gray-400">
-                        Last deployment <time datetime="{{ $project->lastDeployment->created_at }}">{{ $project->lastDeployment->created_at->diffForHumans() }}</time>
+                        Last deployment <time datetime="{{ $project->lastDeployment->created_at }}" x-data="{time: human(new Date('{{ $project->lastDeployment->created_at }}'))}" x-text="time"></time>
                     </p>
                 @else
                     <p class="text-xs/5 text-gray-400">

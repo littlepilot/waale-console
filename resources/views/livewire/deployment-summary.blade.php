@@ -32,7 +32,7 @@
             <svg viewBox="0 0 2 2" class="size-0.5 flex-none fill-gray-300">
                 <circle cx="1" cy="1" r="1" />
             </svg>
-            <p class="whitespace-nowrap">{{ $deployment->created_at->diffForHumans() }}</p>
+            <p class="whitespace-nowrap" x-data="{time: human(new Date('{{ $deployment->created_at }}'))}" x-text="time"></p>
         </div>
     </div>
     @if($deployment->status == \App\Models\DeploymentStatus::Deployed)
