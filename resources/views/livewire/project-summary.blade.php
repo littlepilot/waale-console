@@ -11,7 +11,7 @@
                 </a>
             </p>
             <p class="mt-1 truncate text-xs/5 text-gray-400">
-                <a href="{{ url('http://' . $project->domain) }}" class="relative truncate hover:underline">{{ $project->domain }}</a>
+                <a href="{{ url('https://' . $project->domain) }}" class="relative truncate hover:underline">{{ $project->domain }}</a>
             </p>
         </div>
     </div>
